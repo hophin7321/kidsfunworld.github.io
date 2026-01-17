@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const alphabetData = [
     { letter: 'A', word: 'Apple', image: ASSETS.alphabet + "Apple.png", sound: ASSETS.alphabet + "a.mp3" },
-    { letter: 'B', word: 'Ball', image: ASSETS.alphabet + "ball.png", sound: ASSETS.alphabet + "b.mp3" },
+    { letter: 'B', word: 'Ball', image: ASSETS.alphabet + "Ball.png", sound: ASSETS.alphabet + "b.mp3" },
     { letter: 'C', word: 'Cat', image: ASSETS.alphabet + "Cat.png", sound: ASSETS.alphabet + "c.mp3" },
     { letter: 'D', word: 'Dog', image: ASSETS.alphabet + "Dog.png", sound: ASSETS.alphabet + "a.mp3" },
     { letter: 'E', word: 'Elephant', image: ASSETS.alphabet + "Elephant.png", sound: ASSETS.alphabet + "b.mp3" },
