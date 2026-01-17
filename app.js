@@ -146,7 +146,7 @@ const alphabetData = [
     const rhymeData = [
         { title: "Twinkle Twinkle Little Star", audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3", icon: "✨" },
         { title: "Bounce Bounce Boo!", audio: ASSETS.rhymes + "Bounce Bounce Boo!.mp3", icon: "🥳" },
-        { title: "ABC Alphabet Song for Kids", audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3", icon: "🎵" },
+        { title: "ABC Alphabet Song for Kids", audio: "A to Z Alphabet Fun Song for Kids.mp3", icon: "🎵" },
         { title: "Wheels on the Bus", audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3", icon: "🚌" },
     ];
 
