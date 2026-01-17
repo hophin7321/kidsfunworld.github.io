@@ -95,22 +95,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Data for activities
     const animalData = [
-        { name: "Cow", sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f42e.png" }, // Placeholder audio
-        { name: "Dog", sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f436.png" },
-        { name: "Cat", sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f431.png" },
-        { name: "Lion", sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f981.png" },
-        { name: "Elephant", sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f418.png" },
-        { name: "Horse", sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f434.png" },
-        { name: "Duck", sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f986.png" },
+        { name: "Cow", sound: "https://cdn.pixabay.com/audio/2025/05/18/audio_6b56df2a69.mp3", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f42e.png" }, // Placeholder audio
+        { name: "Dog", sound: "https://cdn.pixabay.com/audio/2025/09/18/audio_dd6700a2a1.mp3", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f436.png" },
+        { name: "Cat", sound: "https://cdn.pixabay.com/audio/2025/09/15/audio_97518e4c2e.mp3", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f431.png" },
+        { name: "Lion", sound: "https://cdn.pixabay.com/audio/2025/11/28/audio_a83280ddfa.mp3", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f981.png" },
+        { name: "Elephant", sound: "https://cdn.pixabay.com/audio/2024/07/21/audio_4f5f559a59.mp3", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f418.png" },
+        { name: "Horse", sound: "https://cdn.pixabay.com/audio/2025/08/15/audio_5bafc3af72.mp3", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f434.png" },
+        { name: "Duck", sound: "https://cdn.pixabay.com/audio/2025/01/27/audio_8d11074ec7.mp3", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f986.png" },
     ];
 
     const alphabetData = [
-        { letter: 'A', word: 'Apple', image: 'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f34e.png', sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" },
+        { letter: 'A', word: 'Apple', image: 'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f34e.png', sound: "https://cdn.pixabay.com/audio/2025/10/24/audio_731ea2340e.mp3" },
         { letter: 'B', word: 'Ball', image: 'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u26bd.png', sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3" },
         { letter: 'C', word: 'Cat', image: 'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f431.png', sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3" },
         { letter: 'D', word: 'Dog', image: 'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f436.png', sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3" },
         { letter: 'E', word: 'Egg', image: 'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f95a.png', sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3" },
         { letter: 'F', word: 'Fish', image: 'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f41f.png', sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3" },
+        { letter: 'G', word: 'Apple', image: 'https://fonts.google.com/noto/specimen/Noto+Emoji/glyphs?preview.text=DOG', sound: "https://cdn.pixabay.com/audio/2025/10/24/audio_731ea2340e.mp3" },
+        { letter: 'H', word: 'Ball', image: 'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u26bd.png', sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3" },
+        { letter: 'I', word: 'Ice Cream', image: 'https://github.com/googlefonts/noto-emoji/blob/main/png/512/emoji_u1f366.png', sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3" },
+        { letter: 'J', word: 'Dog', image: 'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f436.png', sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3" },
+        { letter: 'K', word: 'Egg', image: 'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f95a.png', sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3" },
+        { letter: 'L', word: 'Fish', image: 'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f41f.png', sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3" },
+        { letter: 'M', word: 'Apple', image: 'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f34e.png', sound: "https://cdn.pixabay.com/audio/2025/10/24/audio_731ea2340e.mp3" },
+        { letter: 'N', word: 'Ball', image: 'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u26bd.png', sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3" },
+        { letter: 'O', word: 'Cat', image: 'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f431.png', sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3" },
+        { letter: 'P', word: 'Dog', image: 'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f436.png', sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3" },
+        { letter: 'Q', word: 'Egg', image: 'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f95a.png', sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3" },
+        { letter: 'R', word: 'Fish', image: 'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f41f.png', sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3" },
+        { letter: 'S', word: 'Apple', image: 'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f34e.png', sound: "https://cdn.pixabay.com/audio/2025/10/24/audio_731ea2340e.mp3" },
+        { letter: 'T', word: 'Ball', image: 'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u26bd.png', sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3" },
+        { letter: 'U', word: 'Cat', image: 'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f431.png', sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3" },
+        { letter: 'V', word: 'Dog', image: 'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f436.png', sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3" },
+        { letter: 'W', word: 'Egg', image: 'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f95a.png', sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3" },
+        { letter: 'X', word: 'Fish', image: 'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f41f.png', sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3" },
+        { letter: 'Y', word: 'Fish', image: 'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f41f.png', sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3" },
+        { letter: 'Z', word: 'Fish', image: 'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f41f.png', sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3" },
     ];
 
     const rhymeData = [
