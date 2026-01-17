@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, touch-action: manipulation">
+    <title>Kid Learn Fun App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+    <audio preload="auto"></audio>
+
+</head>
+
+<body>
+    <div class="app-container">
+        <div class="decorative-elements">
+            <div class="sun"></div>
+            <div class="rainbow"></div>
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+        </div>
+
+        <a href="https://www.nasa.gov/kids" target="_blank" class="ad-placeholder"
+            onclick="window.openAdLink(); return false;">
+            <strong>AD:</strong> Explore Space with NASA Kids!
+        </a>
+
+        <button class="parents-corner-button" onclick="window.toggleParentsCorner()">Parent's Corner</button>
+        <div class="parents-corner-modal" id="parentsCornerModal">
+            <h3>External Educational Links</h3>
+            <ul>
+                <li><a href="https://pbskids.org/" target="_blank">PBS Kids</a></li>
+                <li><a href="https://kids.nationalgeographic.com/" target="_blank">National Geographic Kids</a></li>
+                <li><a href="https://www.khanacademy.org/kids" target="_blank">Khan Academy Kids</a></li>
+            </ul>
+            <button class="close-button" onclick="window.toggleParentsCorner()">Close</button>
+        </div>
+
+        <div class="main-content">
+            <!-- Activity Containers -->
+            <div id="animals-activity" class="activity-container active">
+                <h2>Animal Sounds &#128062;</h2>
+                <p>Tap an animal to hear its sound!</p>
+                <div class="animals-grid">
+                    <!-- Animal cards will be rendered here by JS -->
+                </div>
+            </div>
+
+            <div id="alphabet-activity" class="activity-container">
+                <h2>Alphabet Learning &#128218;</h2>
+                <div class="alphabet-display">
+                    <div class="alphabet-letter" id="alphabetLetter">A</div>
+                    <div class="alphabet-image-container">
+                        <img id="alphabetImage" src="https://placehold.co/150x150/png" alt="Alphabet Image">
+                    </div>
+                    <div class="alphabet-word" id="alphabetWord">Apple</div>
+                </div>
+                <div class="alphabet-nav-buttons">
+                    <button class="app-button" id="prevAlphabet">Previous</button>
+                    <button class="app-button" id="nextAlphabet">Next</button>
+                </div>
+            </div>
+
+            <div id="rhymes-activity" class="activity-container">
+                <h2>Rhymes &amp; Songs &#127925;</h2>
+                <p>Tap a rhyme to play the song and see animations!</p>
+                <div class="rhymes-list">
+                    <!-- Rhyme cards will be rendered here by JS -->
+                </div>
+            </div>
+
+            <div id="coloring-activity" class="activity-container">
+                <h2>Coloring Web App &#127912;</h2>
+                <div class="coloring-app">
+                    <div class="coloring-canvas-container">
+                        <canvas id="coloringCanvas" width="400" height="300"></canvas>
+                    </div>
+                    <div class="color-palette">
+                        <!-- Color swatches will be rendered here by JS -->
+                    </div>
+                    <div class="coloring-actions">
+                        <button class="app-button" id="clearCanvas">Clear Drawing</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="quiz-activity" class="activity-container">
+                <h2>Simple Kids Quiz &#128200;</h2>
+                <div class="quiz-question-container">
+                    <p class="quiz-question-text" id="quizQuestionText">What animal says "Moo"?</p>
+                    <div class="quiz-question-image-container">
+                        <img id="quizQuestionImage" src="https://placehold.co/180x180/png" alt="Quiz Question Image">
+                    </div>
+                </div>
+                <div class="quiz-options" id="quizOptions">
+                    <!-- Quiz options will be rendered here by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav class="nav-bar">
+            <button class="nav-button active" data-activity="animals">
+                <img src="https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f436.png"
+                    alt="Animals">
+                <span>Animals</span>
+            </button>
+            <button class="nav-button" data-activity="alphabet">
+                <img src="https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f1e6.png"
+                    alt="Alphabet">
+                <span>Alphabet</span>
+            </button>
+            <button class="nav-button" data-activity="rhymes">
+                <img src="https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f3b6.png"
+                    alt="Rhymes">
+                <span>Rhymes</span>
+            </button>
+            <button class="nav-button" data-activity="coloring">
+                <img src="https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f3a8.png"
+                    alt="Coloring">
+                <span>Coloring</span>
+            </button>
+            <button class="nav-button" data-activity="quiz">
+                <img src="https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f4c8.png"
+                    alt="Quiz">
+                <span>Quiz</span>
+            </button>
+        </nav>
+    </div>
+</body>
+
+</html>
