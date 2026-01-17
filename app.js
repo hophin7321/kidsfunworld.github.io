@@ -104,13 +104,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Data for activities
     const animalData = [
-        { name: "Cow", sound: "https://cdn.pixabay.com/audio/2025/05/18/audio_6b56df2a69.mp3", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f42e.png" }, // Placeholder audio
-        { name: "Dog", sound: "https://cdn.pixabay.com/audio/2025/09/18/audio_dd6700a2a1.mp3", image: ASSETS.alphabet + "Dog.png" },
-        { name: "Cat", sound: "https://cdn.pixabay.com/audio/2025/09/15/audio_97518e4c2e.mp3", image: ASSETS.alphabet + "Cat.png" },
-        { name: "Lion", sound: "https://cdn.pixabay.com/audio/2025/11/28/audio_a83280ddfa.mp3", image: ASSETS.alphabet + "Lion.png" },
-        { name: "Elephant", sound: "https://cdn.pixabay.com/audio/2024/07/21/audio_4f5f559a59.mp3", image: ASSETS.alphabet + "Elephant.png" },
-        { name: "Horse", sound: "https://cdn.pixabay.com/audio/2025/08/15/audio_5bafc3af72.mp3", image: ASSETS.alphabet + "Horse.png" },
-        { name: "Duck", sound: "https://cdn.pixabay.com/audio/2025/01/27/audio_8d11074ec7.mp3", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f986.png" },
+        { name: "Cow", sound: ASSETS.animals + "Cow.mp3", image: ASSETS.animals + "Cow.png" }, // Placeholder audio
+        { name: "Dog", sound: ASSETS.animals + "Dog.mp3", image: ASSETS.alphabet + "Dog.png" },
+        { name: "Cat", sound: ASSETS.animals + "Cat.mp3", image: ASSETS.alphabet + "Cat.png" },
+        { name: "Lion", sound: ASSETS.animals + "Lion.mp3", image: ASSETS.alphabet + "Lion.png" },
+        { name: "Elephant", sound: ASSETS.animals + "Elephant.mp3", image: ASSETS.alphabet + "Elephant.png" },
+        { name: "Horse", sound: ASSETS.animals + "Horse.mp3", image: ASSETS.alphabet + "Horse.png" },
+        { name: "Duck", sound: ASSETS.animals + "Duck.mp3", image: ASSETS.animals + "Duck.png" },
     ];
 
 const alphabetData = [
