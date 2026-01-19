@@ -412,23 +412,23 @@ body {
 }
 
 .nav-button[data-activity="animals"].active::before {
-    background: var(--primary-blue);
+    background: blue;
 }
 
 .nav-button[data-activity="alphabet"].active::before {
-    background: var(--primary-red);
+    background: red;
 }
 
 .nav-button[data-activity="rhymes"].active::before {
-    background: var(--primary-green);
+    background: #FF007f;
 }
 
 .nav-button[data-activity="coloring"].active::before {
-    background: var(--primary-yellow);
+    background: green;
 }
 
 .nav-button[data-activity="quiz"].active::before {
-    background: var(--primary-purple);
+    background: brown;
 }
 
 .nav-button img {
@@ -445,7 +445,31 @@ body {
 
 /* General App Button Styling */
 .app-button {
-    background-color: var(--primary-blue);
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border-radius: var(--border-radius-sm);
+    border: none;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.1em;
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    transition: all 0.2s ease-out;
+}
+
+.app-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px var(--shadow-heavy);
+}
+
+.app-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px var(--shadow-medium);
+}
+
+/* General App Button Styling */
+.nextColoring {
+    background-color: blue;
     color: white;
     padding: 10px 20px;
     border-radius: var(--border-radius-sm);
@@ -457,12 +481,12 @@ body {
     transition: all 0.2s ease-out;
 }
 
-.app-button:hover {
+.nextColoring:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 12px var(--shadow-heavy);
 }
 
-.app-button:active {
+.nextColoring:active {
     transform: translateY(1px);
     box-shadow: 0 2px 4px var(--shadow-light);
 }
@@ -715,7 +739,7 @@ body {
 }
 
 .coloring-actions .app-button {
-    background-color: var(--primary-yellow);
+    background-color: green;
 }
 
 /* Quiz */

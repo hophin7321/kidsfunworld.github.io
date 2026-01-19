@@ -113,34 +113,34 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: "Duck", sound: ASSETS.animals + "Duck.mp3", image: ASSETS.animals + "Duck.png" },
     ];
 
-const alphabetData = [
-    { letter: 'A', word: 'Apple', image: ASSETS.alphabet + "Apple.png", sound: ASSETS.alphabet + "a.mp3" },
-    { letter: 'B', word: 'Ball', image: ASSETS.alphabet + "Ball.png", sound: ASSETS.alphabet + "b.mp3" },
-    { letter: 'C', word: 'Cat', image: ASSETS.alphabet + "Cat.png", sound: ASSETS.alphabet + "c.mp3" },
-    { letter: 'D', word: 'Dog', image: ASSETS.alphabet + "Dog.png", sound: ASSETS.alphabet + "a.mp3" },
-    { letter: 'E', word: 'Elephant', image: ASSETS.alphabet + "Elephant.png", sound: ASSETS.alphabet + "b.mp3" },
-    { letter: 'F', word: 'Fish', image: ASSETS.alphabet + "Fish.png", sound: ASSETS.alphabet + "c.mp3" },
-    { letter: 'G', word: 'Goat', image: ASSETS.alphabet + "Goat.png", sound: ASSETS.alphabet + "a.mp3" },
-    { letter: 'H', word: 'Horse', image: ASSETS.alphabet + "Horse.png", sound: ASSETS.alphabet + "b.mp3" },
-    { letter: 'I', word: 'Ice Cream', image: ASSETS.alphabet + "ice cream.png", sound: ASSETS.alphabet + "c.mp3" },
-    { letter: 'J', word: 'Juice', image: ASSETS.alphabet + "Juice.png", sound: ASSETS.alphabet + "a.mp3" },
-    { letter: 'K', word: 'Kite', image: ASSETS.alphabet + "Kite.png", sound: ASSETS.alphabet + "b.mp3" },
-    { letter: 'L', word: 'Lion', image: ASSETS.alphabet + "Lion.png", sound: ASSETS.alphabet + "c.mp3" },
-    { letter: 'M', word: 'Monkey', image: ASSETS.alphabet + "Monkey.png", sound: ASSETS.alphabet + "a.mp3" },
-    { letter: 'N', word: 'Nest', image: ASSETS.alphabet + "Nest.png", sound: ASSETS.alphabet + "b.mp3" },
-    { letter: 'O', word: 'Orange', image: ASSETS.alphabet + "Orange.png", sound: ASSETS.alphabet + "c.mp3" },
-    { letter: 'P', word: 'Parrot', image: ASSETS.alphabet + "Parrot.png", sound: ASSETS.alphabet + "a.mp3" },
-    { letter: 'Q', word: 'Queen', image: ASSETS.alphabet + "Queen.png", sound: ASSETS.alphabet + "b.mp3" },
-    { letter: 'R', word: 'Rabbit', image: ASSETS.alphabet + "Rabbit.png", sound: ASSETS.alphabet + "c.mp3" },
-    { letter: 'S', word: 'Sun', image: ASSETS.alphabet + "Sun.png", sound: ASSETS.alphabet + "a.mp3" },
-    { letter: 'T', word: 'Train', image: ASSETS.alphabet + "Train.png", sound: ASSETS.alphabet + "b.mp3" },
-    { letter: 'U', word: 'Umbrella', image: ASSETS.alphabet + "Umbrella.png", sound: ASSETS.alphabet + "c.mp3" },
-    { letter: 'V', word: 'Van', image: ASSETS.alphabet + "Van.png", sound: ASSETS.alphabet + "a.mp3" },
-    { letter: 'W', word: 'Whale', image: ASSETS.alphabet + "Whale.png", sound: ASSETS.alphabet + "b.mp3" },
-    { letter: 'X', word: 'Xylophone', image: ASSETS.alphabet + "xylophone.png", sound: ASSETS.alphabet + "c.mp3" },
-    { letter: 'Y', word: 'Yo-Yo', image: ASSETS.alphabet + "yo-yo.png", sound: ASSETS.alphabet + "a.mp3" },
-    { letter: 'Z', word: 'Zebra', image: ASSETS.alphabet + "Zebra.png", sound: ASSETS.alphabet + "b.mp3" },
-];
+    const alphabetData = [
+        { letter: 'A', word: 'Apple', image: ASSETS.alphabet + "Apple.png", sound: ASSETS.alphabet + "a.mp3" },
+        { letter: 'B', word: 'Ball', image: ASSETS.alphabet + "Ball.png", sound: ASSETS.alphabet + "b.mp3" },
+        { letter: 'C', word: 'Cat', image: ASSETS.alphabet + "Cat.png", sound: ASSETS.alphabet + "c.mp3" },
+        { letter: 'D', word: 'Dog', image: ASSETS.alphabet + "Dog.png", sound: ASSETS.alphabet + "a.mp3" },
+        { letter: 'E', word: 'Elephant', image: ASSETS.alphabet + "Elephant.png", sound: ASSETS.alphabet + "b.mp3" },
+        { letter: 'F', word: 'Fish', image: ASSETS.alphabet + "Fish.png", sound: ASSETS.alphabet + "c.mp3" },
+        { letter: 'G', word: 'Goat', image: ASSETS.alphabet + "Goat.png", sound: ASSETS.alphabet + "a.mp3" },
+        { letter: 'H', word: 'Horse', image: ASSETS.alphabet + "Horse.png", sound: ASSETS.alphabet + "b.mp3" },
+        { letter: 'I', word: 'Ice Cream', image: ASSETS.alphabet + "ice cream.png", sound: ASSETS.alphabet + "c.mp3" },
+        { letter: 'J', word: 'Juice', image: ASSETS.alphabet + "Juice.png", sound: ASSETS.alphabet + "a.mp3" },
+        { letter: 'K', word: 'Kite', image: ASSETS.alphabet + "Kite.png", sound: ASSETS.alphabet + "b.mp3" },
+        { letter: 'L', word: 'Lion', image: ASSETS.alphabet + "Lion.png", sound: ASSETS.alphabet + "c.mp3" },
+        { letter: 'M', word: 'Monkey', image: ASSETS.alphabet + "Monkey.png", sound: ASSETS.alphabet + "a.mp3" },
+        { letter: 'N', word: 'Nest', image: ASSETS.alphabet + "Nest.png", sound: ASSETS.alphabet + "b.mp3" },
+        { letter: 'O', word: 'Orange', image: ASSETS.alphabet + "Orange.png", sound: ASSETS.alphabet + "c.mp3" },
+        { letter: 'P', word: 'Parrot', image: ASSETS.alphabet + "Parrot.png", sound: ASSETS.alphabet + "a.mp3" },
+        { letter: 'Q', word: 'Queen', image: ASSETS.alphabet + "Queen.png", sound: ASSETS.alphabet + "b.mp3" },
+        { letter: 'R', word: 'Rabbit', image: ASSETS.alphabet + "Rabbit.png", sound: ASSETS.alphabet + "c.mp3" },
+        { letter: 'S', word: 'Sun', image: ASSETS.alphabet + "Sun.png", sound: ASSETS.alphabet + "a.mp3" },
+        { letter: 'T', word: 'Train', image: ASSETS.alphabet + "Train.png", sound: ASSETS.alphabet + "b.mp3" },
+        { letter: 'U', word: 'Umbrella', image: ASSETS.alphabet + "Umbrella.png", sound: ASSETS.alphabet + "c.mp3" },
+        { letter: 'V', word: 'Van', image: ASSETS.alphabet + "Van.png", sound: ASSETS.alphabet + "a.mp3" },
+        { letter: 'W', word: 'Whale', image: ASSETS.alphabet + "Whale.png", sound: ASSETS.alphabet + "b.mp3" },
+        { letter: 'X', word: 'Xylophone', image: ASSETS.alphabet + "xylophone.png", sound: ASSETS.alphabet + "c.mp3" },
+        { letter: 'Y', word: 'Yo-Yo', image: ASSETS.alphabet + "yo-yo.png", sound: ASSETS.alphabet + "a.mp3" },
+        { letter: 'Z', word: 'Zebra', image: ASSETS.alphabet + "Zebra.png", sound: ASSETS.alphabet + "b.mp3" },
+    ];
 
 
     const rhymeData = [
@@ -202,6 +202,7 @@ const alphabetData = [
     const coloringContext = coloringCanvas.getContext('2d');
     const colorPalette = document.querySelector('.color-palette');
     const clearCanvasBtn = document.getElementById('clearCanvas');
+    const nextCanvasBtn = document.getElementById('nextCanvas');
 
     const quizQuestionText = document.getElementById('quizQuestionText');
     const quizQuestionImage = document.getElementById('quizQuestionImage');
@@ -354,6 +355,40 @@ const alphabetData = [
 
 
     // --- Coloring Activity ---
+
+    // --- SVG STRUCTURES (ONE PER PAGE) ---
+    const coloringSVGs = [
+        // 1️⃣ Flower
+        "data:image/svg+xml,%3Csvg width='400' height='300' viewBox='0 0 400 300' fill='none' xmlns='http://www.w3.org/2000/svg'%3E\
+    %3Cpath d='M200 150 C220 120, 230 80, 200 70 C170 80, 180 120, 200 150Z' stroke='black' stroke-width='2' fill='white'/%3E\
+    %3Cpath d='M200 150 C170 120, 160 80, 190 70 C220 80, 210 120, 200 150Z' stroke='black' stroke-width='2' fill='white'/%3E\
+    %3Cpath d='M200 150 C230 140, 240 100, 220 90 C200 100, 210 140, 200 150Z' stroke='black' stroke-width='2' fill='white'/%3E\
+    %3Cpath d='M200 150 C170 140, 160 100, 180 90 C200 100, 190 140, 200 150Z' stroke='black' stroke-width='2' fill='white'/%3E\
+    %3Ccircle cx='200' cy='100' r='15' stroke='black' stroke-width='2' fill='yellow'/%3E\
+    %3C/svg%3E",
+
+        // 2️⃣ Butterfly
+        "data:image/svg+xml,%3Csvg width='400' height='300' viewBox='0 0 400 300' fill='none' xmlns='http://www.w3.org/2000/svg'%3E\
+    %3Cpath d='M200 150 C180 130, 160 130, 150 150 C160 170, 180 170, 200 150Z' stroke='black' stroke-width='2' fill='white'/%3E\
+    %3Cpath d='M200 150 C220 130, 240 130, 250 150 C240 170, 220 170, 200 150Z' stroke='black' stroke-width='2' fill='white'/%3E\
+    %3Ccircle cx='200' cy='150' r='8' stroke='black' stroke-width='2' fill='brown'/%3E\
+    %3C/svg%3E",
+
+        // 3️⃣ Cat
+        "data:image/svg+xml,%3Csvg width='400' height='300' viewBox='0 0 400 300' fill='none' xmlns='http://www.w3.org/2000/svg'%3E\
+    %3Ccircle cx='200' cy='160' r='30' stroke='black' stroke-width='2' fill='white'/%3E\
+    %3Cpolygon points='175,135 160,110 185,125' stroke='black' stroke-width='2' fill='white'/%3E\
+    %3Cpolygon points='225,135 240,110 215,125' stroke='black' stroke-width='2' fill='white'/%3E\
+    %3Ccircle cx='190' cy='160' r='3' fill='black'/%3E\
+    %3Ccircle cx='210' cy='160' r='3' fill='black'/%3E\
+    %3Cpath d='M200 170 Q195 175 190 173' stroke='black'/%3E\
+    %3Cpath d='M200 170 Q205 175 210 173' stroke='black'/%3E\
+    %3C/svg%3E"
+    ];
+
+    let currentStructureIndex = 0;
+
+
     let isDrawing = false;
     function initializeColoringCanvas() {
         const img = new Image();
@@ -365,8 +400,7 @@ const alphabetData = [
         };
         // Example drawing outline (a simple flower and butterfly)
         // In a real app, this would be a single, pre-made outline image
-        img.src = "data:image/svg+xml,%3Csvg width='400' height='300' viewBox='0 0 400 300' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3C!-- Flower --%3E%3Cpath d='M200 150 C220 120, 230 80, 200 70 C170 80, 180 120, 200 150Z' stroke='black' stroke-width='2' fill='white'/%3E%3Cpath d='M200 150 C170 120, 160 80, 190 70 C220 80, 210 120, 200 150Z' stroke='black' stroke-width='2' fill='white'/%3E%3Cpath d='M200 150 C230 140, 240 100, 220 90 C200 100, 210 140, 200 150Z' stroke='black' stroke-width='2' fill='white'/%3E%3Cpath d='M200 150 C170 140, 160 100, 180 90 C200 100, 190 140, 200 150Z' stroke='black' stroke-width='2' fill='white'/%3E%3Ccircle cx='200' cy='100' r='15' stroke='black' stroke-width='2' fill='yellow'/%3E%3C!-- Butterfly --%3E%3Cpath d='M100 200 C80 180, 60 180, 50 200 C60 220, 80 220, 100 200Z' stroke='black' stroke-width='2' fill='white'/%3E%3Cpath d='M100 200 C80 220, 60 220, 50 200 C60 180, 80 180, 100 200Z' stroke='black' stroke-width='2' fill='white'/%3E%3Cpath d='M100 200 C120 180, 140 180, 150 200 C140 220, 120 220, 100 200Z' stroke='black' stroke-width='2' fill='white'/%3E%3Cpath d='M100 200 C120 220, 140 220, 150 200 C140 180, 120 180, 100 200Z' stroke='black' stroke-width='2' fill='white'/%3E%3Ccircle cx='100' cy='200' r='10' stroke='black' stroke-width='2' fill='brown'/%3E%3C/svg%3E";
-
+        img.src = coloringSVGs[currentStructureIndex];
 
         // Set up event listeners for coloring
         coloringCanvas.addEventListener('mousedown', startFill);
@@ -376,6 +410,18 @@ const alphabetData = [
             initializeColoringCanvas(); // Redraws the initial outline
             playSound(400, 0.1, 'sine');
         });
+        nextCanvasBtn.addEventListener('click', () => {
+            currentStructureIndex++;
+
+            if (currentStructureIndex >= coloringSVGs.length) {
+                currentStructureIndex = 0; // loop back
+            }
+
+            initializeColoringCanvas();
+            playSound(700, 0.1, 'triangle');
+        });
+
+
     }
 
     function renderColorPalette() {
