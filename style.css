@@ -1,3 +1,4 @@
+
 :root {
     --primary-blue: #64B5F6;
     --primary-red: #EF5350;
@@ -20,6 +21,8 @@
     --border-radius-lg: 25px;
     --button-size: 60px;
 }
+
+
 
 body {
     margin: 0;

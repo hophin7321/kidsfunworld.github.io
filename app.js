@@ -542,7 +542,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (appState.quizAnsweredCorrectly) return; // Prevent multiple answers
 
         if (option.isCorrect) {
-            playSound(700, 0.2, 'sine', () => { // Correct sound
+            playSound(700, 0.2, 'triangle', () => { // Correct sound
                 showStarAnimation(button);
                 setTimeout(startQuiz, 1000); // Move to next question after 1s
             });
