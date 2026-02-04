@@ -750,6 +750,10 @@ body {
     color: var(--primary-purple);
 }
 
+.quiz-actions .app-button {
+    background-color: red;
+}
+
 .quiz-question-container {
     text-align: center;
     margin-bottom: 20px;
@@ -762,8 +766,8 @@ body {
 }
 
 .quiz-question-image-container {
-    width: 180px;
-    height: 180px;
+    width: 220px;
+    height: 220px;
     margin: 0 auto 20px;
     background-color: #EDE7F6;
     border-radius: var(--border-radius-md);
