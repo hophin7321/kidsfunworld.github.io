@@ -516,30 +516,18 @@ body {
     transform: scale(0.95);
 }
 
-.nextColoring {
-    font-family: 'Fredoka One', cursive;
-    font-size: 18px;
-    background: #2196F3;
-    color: white;
-    padding: 0.8em 1.2em;
+/* Add this to style the container */
+.coloring-actions {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    border-radius: 16px;
-    overflow: hidden;
-    transition: all 0.2s;
-    cursor: pointer;
-    font-weight: bold;
-    position: relative;
+    justify-content: center; /* Centers the buttons */
+    gap: 15px; /* Adds space between them */
+    flex-wrap: wrap; /* Keeps them neat on smaller screens */
+    margin-top: 15px; 
 }
 
-.nextColoring:hover {
-    filter: brightness(1.1);
-}
-
-.nextColoring:active {
-    transform: scale(0.95);
+.coloring-actions .page-button,
+.coloring-actions .app-button {
+    background: #4CAF50;
 }
 
 /* Activity Specific Styles */
@@ -793,6 +781,7 @@ body {
     background: #4CAF50;
 }
 
+
 /* Quiz */
 #quiz-activity h2 {
     color: var(--primary-purple);
@@ -808,7 +797,7 @@ body {
 
 .quiz-actions .page-button,
 .quiz-actions .app-button {
-    background: #FF6B6B;
+    background: #da3737;
     font-size: 1.2em;
     min-width: 130px;
 }
