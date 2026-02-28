@@ -553,7 +553,12 @@ document.addEventListener('DOMContentLoaded', () => {
             button.addEventListener('click', (e) => {
                 const category = e.target.textContent.toLowerCase();
                 appState.quizCategory = category;
-                startQuiz();
+                // Play menu sound effect
+                playHtmlAudio('assets/audio/App Menu Up.wav');
+                // Start quiz after a short delay
+                setTimeout(() => {
+                    startQuiz();
+                }, 200);
             });
         });
     }
