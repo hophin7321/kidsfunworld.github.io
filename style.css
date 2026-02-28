@@ -452,7 +452,7 @@ body {
 /* ===== PAGE BUTTONS GROUP ===== */
 /* Base styling for all page buttons (separated from nav buttons) */
 .page-button {
-    font-family: 'Fredoka One', cursive;
+    font-family: '', cursive;
     font-size: 18px;
     color: white;
     padding: 0.8em 1.2em;
@@ -491,7 +491,7 @@ body {
 
 /* Legacy class names - mapped to new page-button classes */
 .app-button {
-    font-family: 'Fredoka One', cursive;
+    font-family: 'Comic-Sans', cursive;
     font-size: 18px;
     background: #4CAF50;
     color: white;
@@ -517,7 +517,7 @@ body {
 }
 
 .nextColoring {
-    font-family: 'Fredoka One', cursive;
+    font-family: '', cursive;
     font-size: 18px;
     background: #2196F3;
     color: white;
@@ -536,6 +536,7 @@ body {
 
 .nextColoring:hover {
     filter: brightness(1.1);
+    justify-content: center;
 }
 
 .nextColoring:active {
@@ -786,6 +787,14 @@ body {
     border-color: var(--primary-blue);
     transform: scale(1.2);
     box-shadow: 0 4px 10px var(--shadow-medium);
+}
+
+.coloring-actions {
+    display: flex;
+    justify-content: center; /* Centers the buttons on the page */
+    align-items: center;     /* Makes sure they are vertically aligned */
+    gap: 15px;               /* Adds nice spacing between them */
+    flex-wrap: wrap;         /* Ensures they wrap nicely on small mobile screens */
 }
 
 .coloring-actions .page-button,
