@@ -453,6 +453,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial load
     initializeColoringCanvas(currentStructureIndex);
 
+    // Helper to check if a color is "near black" (a border)
+    function isBorder(color, threshold = 60) {
+        return color[0] < threshold && color[1] < threshold && color[2] < threshold;
+    }
 
     function renderColorPalette() {
         colorPalette.innerHTML = '';
@@ -547,26 +551,39 @@ document.addEventListener('DOMContentLoaded', () => {
         const targetColor = getPixel(imageData, x, y);
         const fillColor = hexToRgba(appState.selectedColor);
 
-        if (colorsMatch(targetColor, fillColor, 1)) { // Don't fill if already the same color
+        // 🎯 FIX 1: If user clicks on a black/dark border, do nothing
+        if (isBorder(targetColor)) {
             return;
         }
 
+        if (colorsMatch(targetColor, fillColor, 1)) {
+            return;
+        }
+
+        // Capture state for Undo before starting
+        appState.coloringHistory.push(coloringContext.getImageData(0, 0, coloringCanvas.width, coloringCanvas.height));
+
         const stack = [[x, y]];
         const visited = new Set();
-        const width = coloringCanvas.width;
-        const height = coloringCanvas.height;
-
+        
         while (stack.length > 0) {
             const [cx, cy] = stack.pop();
             const key = `${cx},${cy}`;
 
-            if (cx < 0 || cx >= width || cy < 0 || cy >= height || visited.has(key)) {
+            if (cx < 0 || cx >= coloringCanvas.width || cy < 0 || cy >= coloringCanvas.height || visited.has(key)) {
                 continue;
             }
 
             visited.add(key);
+            const currentPixelColor = getPixel(imageData, cx, cy);
 
-            if (colorsMatch(getPixel(imageData, cx, cy), targetColor)) {
+            // 🎯 FIX 2: If the current pixel is a border, don't fill it and don't go past it
+            if (isBorder(currentPixelColor)) {
+                continue; 
+            }
+
+            // Use a lower tolerance (e.g., 30) to prevent bleeding into lines
+            if (colorsMatch(currentPixelColor, targetColor, 30)) {
                 setPixel(imageData, cx, cy, fillColor);
                 stack.push([cx + 1, cy]);
                 stack.push([cx - 1, cy]);
@@ -575,21 +592,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         coloringContext.putImageData(imageData, 0, 0);
+        playSound(600, 0.1, 'sine');
     }
 
     // --- Quiz Activity ---
-    function setupQuizCategories() {
+        function setupQuizCategories() {
         const quizButtons = document.querySelectorAll('.quiz-actions .app-button');
+        
         quizButtons.forEach(button => {
             button.addEventListener('click', (e) => {
-                quizButtons.forEach(btn => btn.classList.remove('ative'));
+                // 1. Remove 'active' class from ALL quiz buttons first
+                quizButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // 2. Add 'active' class to the button that was just clicked
                 button.classList.add('active');
 
-                const category = e.target.textContent.toLowerCase();
+                // 3. Update the app state based on the button text
+                const category = button.textContent.trim().toLowerCase();
                 appState.quizCategory = category;
-                // Play menu sound effect
+                
                 playHtmlAudio('assets/audio/App Menu Up.wav');
-                // Start quiz after a short delay
+                
                 setTimeout(() => {
                     startQuiz();
                 }, 200);
