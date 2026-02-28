@@ -1,4 +1,3 @@
-
 :root {
     --primary-blue: #64B5F6;
     --primary-red: #EF5350;
@@ -750,8 +749,24 @@ body {
     color: var(--primary-purple);
 }
 
+.quiz-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
 .quiz-actions .app-button {
     background-color: red;
+    padding: 12px 30px;
+    font-size: 1.2em;
+    min-width: 120px;
+}
+
+.quiz-actions .app-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px var(--shadow-heavy);
 }
 
 .quiz-question-container {

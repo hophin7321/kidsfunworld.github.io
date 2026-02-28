@@ -13,11 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
         audioContext: null,
         gainNode: null,
         currentAlphabetIndex: 0,
-        selectedColor: '#FF0000', // Default coloring color
+        selectedColor: '#FF0000',
         quizCurrentQuestion: null,
         quizAnsweredCorrectly: false,
-        currentRhymeAudio: null, // Track currently playing HTML5 audio
-        soundSources: [], // Track Web Audio API sources for stopping
+        currentRhymeAudio: null,
+        soundSources: [],
+        quizCategory: 'images', // Add quiz category state
     };
 
     // Utility functions for audio
@@ -163,7 +164,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 { text: "Cow", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f42e.png", isCorrect: true },
                 { text: "Cat", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f431.png", isCorrect: false },
                 { text: "Dog", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f436.png", isCorrect: false },
-            ]
+            ],
+            category: "images"
         },
         {
             question: "Which one is an Apple?",
@@ -172,16 +174,48 @@ document.addEventListener('DOMContentLoaded', () => {
                 { text: "Banana", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f34c.png", isCorrect: false },
                 { text: "Apple", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f34e.png", isCorrect: true },
                 { text: "Orange", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f34a.png", isCorrect: false },
-            ]
+            ],
+            category: "images"
         },
         {
             question: "Find the Triangle!",
-            image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f53a.png", // Up-pointing red triangle
+            image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f53a.png",
             options: [
                 { text: "Circle", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u26ab.png", isCorrect: false },
                 { text: "Square", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u25a0.png", isCorrect: false },
                 { text: "Triangle", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f53a.png", isCorrect: true },
-            ]
+            ],
+            category: "images"
+        },
+        {
+            question: "What is 2 + 3?",
+            image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f522.png",
+            options: [
+                { text: "4", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u0034_fe0f_20e3.png", isCorrect: false },
+                { text: "5", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u0035_fe0f_20e3.png", isCorrect: true },
+                { text: "6", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u0036_fe0f_20e3.png", isCorrect: false },
+            ],
+            category: "maths"
+        },
+        {
+            question: "What is 5 - 2?",
+            image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f522.png",
+            options: [
+                { text: "2", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u0032_fe0f_20e3.png", isCorrect: false },
+                { text: "3", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u0033_fe0f_20e3.png", isCorrect: true },
+                { text: "4", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u0034_fe0f_20e3.png", isCorrect: false },
+            ],
+            category: "maths"
+        },
+        {
+            question: "What is 3 + 4?",
+            image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f522.png",
+            options: [
+                { text: "6", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u0036_fe0f_20e3.png", isCorrect: false },
+                { text: "7", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u0037_fe0f_20e3.png", isCorrect: true },
+                { text: "8", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u0038_fe0f_20e3.png", isCorrect: false },
+            ],
+            category: "maths"
         }
     ];
 
@@ -247,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 renderColorPalette();
                 break;
             case 'quiz':
-                startQuiz();
+                setupQuizCategories();
                 break;
         }
     }
@@ -513,8 +547,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Quiz Activity ---
+    function setupQuizCategories() {
+        const quizButtons = document.querySelectorAll('.quiz-actions .app-button');
+        quizButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const category = e.target.textContent.toLowerCase();
+                appState.quizCategory = category;
+                startQuiz();
+            });
+        });
+    }
+
     function startQuiz() {
-        appState.quizCurrentQuestion = quizQuestions[Math.floor(Math.random() * quizQuestions.length)];
+        const filteredQuestions = quizQuestions.filter(q => q.category === appState.quizCategory);
+        appState.quizCurrentQuestion = filteredQuestions[Math.floor(Math.random() * filteredQuestions.length)];
         appState.quizAnsweredCorrectly = false;
         displayQuizQuestion();
     }
@@ -524,9 +570,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         quizQuestionText.textContent = appState.quizCurrentQuestion.question;
         quizQuestionImage.src = appState.quizCurrentQuestion.image;
-        quizOptionsContainer.innerHTML = ''; // Clear previous options
+        quizOptionsContainer.innerHTML = '';
 
-        // Shuffle options
         const shuffledOptions = [...appState.quizCurrentQuestion.options].sort(() => Math.random() - 0.5);
 
         shuffledOptions.forEach(option => {
