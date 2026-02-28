@@ -567,8 +567,8 @@ body {
     cursor: pointer;
     transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
     width: 100%;
-    max-width: 150px;
-    height: 150px;
+    max-width: 130px;
+    height: 130px;
 }
 
 .animal-card:hover {
