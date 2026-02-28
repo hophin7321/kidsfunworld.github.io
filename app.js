@@ -282,6 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
             case 'quiz':
                 setupQuizCategories();
+                startQuiz();
                 break;
         }
     }
@@ -551,6 +552,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const quizButtons = document.querySelectorAll('.quiz-actions .app-button');
         quizButtons.forEach(button => {
             button.addEventListener('click', (e) => {
+                quizButtons.forEach(btn => btn.classList.remove('ative'));
+                button.classList.add('active');
+                
                 const category = e.target.textContent.toLowerCase();
                 appState.quizCategory = category;
                 // Play menu sound effect
