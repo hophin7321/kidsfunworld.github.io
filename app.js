@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currentRhymeAudio: null,
         soundSources: [],
         quizCategory: 'images', // Add quiz category state
+        coloringHistory: [],
     };
 
     // Utility functions for audio
@@ -406,6 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
             coloringContext.fillStyle = 'white';
             coloringContext.fillRect(0, 0, coloringCanvas.width, coloringCanvas.height);
             coloringContext.drawImage(img, 0, 0, coloringCanvas.width, coloringCanvas.height);
+            appState.coloringHistory = [];
         };
     }
 
@@ -417,6 +419,26 @@ document.addEventListener('DOMContentLoaded', () => {
         initializeColoringCanvas(currentStructureIndex);
         playSound(400, 0.1, 'sine');
     });
+
+    // --- Add this block with your other coloring listeners ---
+    const undoCanvasBtn = document.getElementById('undoCanvas'); // Ensure ID matches index.html
+
+    if (undoCanvasBtn) {
+    undoCanvasBtn.addEventListener('click', () => {
+            if (appState.coloringHistory.length > 0) {
+            // 1. Get the last saved state
+                const previousState = appState.coloringHistory.pop();
+            
+            // 2. Put it back on the canvas
+                coloringContext.putImageData(previousState, 0, 0);
+            
+            // 3. Play feedback sound
+                playHtmlAudio('assets/audio/App Menu Up.wav');
+            } else {
+                console.log("Nothing to undo!");
+            }
+        });
+    }
 
     nextCanvasBtn.addEventListener('click', () => {
         currentStructureIndex++;
@@ -496,6 +518,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function startFill(event) {
+        // 1. Capture the current state BEFORE the new fill
+        const currentState = coloringContext.getImageData(0, 0, coloringCanvas.width, coloringCanvas.height);
+        
+        // 2. Add it to history (limit to 10 moves to save memory)
+        appState.coloringHistory.push(currentState);
+        if (appState.coloringHistory.length > 10) {
+            appState.coloringHistory.shift(); // Remove the oldest move
+        }
         playSound(600, 0.1, 'sine'); // Sound on fill
         const rect = coloringCanvas.getBoundingClientRect();
         const scaleX = coloringCanvas.width / rect.width;
@@ -554,7 +584,7 @@ document.addEventListener('DOMContentLoaded', () => {
             button.addEventListener('click', (e) => {
                 quizButtons.forEach(btn => btn.classList.remove('ative'));
                 button.classList.add('active');
-                
+
                 const category = e.target.textContent.toLowerCase();
                 appState.quizCategory = category;
                 // Play menu sound effect
