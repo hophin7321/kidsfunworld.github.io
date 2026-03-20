@@ -158,67 +158,47 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const quizQuestions = [
-        {
-            question: "What animal says 'Moo'?",
-            image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f42e.png", // Cow
-            options: [
-                { text: "Cow", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f42e.png", isCorrect: true },
-                { text: "Cat", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f431.png", isCorrect: false },
-                { text: "Dog", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f436.png", isCorrect: false },
-            ],
-            category: "images"
-        },
-        {
-            question: "Which one is an Apple?",
-            image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f34e.png", // Apple
-            options: [
-                { text: "Banana", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f34c.png", isCorrect: false },
-                { text: "Apple", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f34e.png", isCorrect: true },
-                { text: "Orange", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f34a.png", isCorrect: false },
-            ],
-            category: "images"
-        },
-        {
-            question: "Find the Triangle!",
-            image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f53a.png",
-            options: [
-                { text: "Circle", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u26ab.png", isCorrect: false },
-                { text: "Square", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u25a0.png", isCorrect: false },
-                { text: "Triangle", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f53a.png", isCorrect: true },
-            ],
-            category: "images"
-        },
-        {
-            question: "What is 2 + 3?",
-            image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f522.png",
-            options: [
-                { text: "4", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u0034_fe0f_20e3.png", isCorrect: false },
-                { text: "5", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u0035_fe0f_20e3.png", isCorrect: true },
-                { text: "6", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u0036_fe0f_20e3.png", isCorrect: false },
-            ],
-            category: "maths"
-        },
-        {
-            question: "What is 5 - 2?",
-            image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f522.png",
-            options: [
-                { text: "2", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u0032_fe0f_20e3.png", isCorrect: false },
-                { text: "3", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u0033_fe0f_20e3.png", isCorrect: true },
-                { text: "4", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u0034_fe0f_20e3.png", isCorrect: false },
-            ],
-            category: "maths"
-        },
-        {
-            question: "What is 3 + 4?",
-            image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f522.png",
-            options: [
-                { text: "6", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u0036_fe0f_20e3.png", isCorrect: false },
-                { text: "7", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u0037_fe0f_20e3.png", isCorrect: true },
-                { text: "8", image: "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u0038_fe0f_20e3.png", isCorrect: false },
-            ],
-            category: "maths"
-        }
-    ];
+    {
+        question: "What animal says 'Moo'?",
+        image: "assets/cow.png",
+        options: [
+            { text: "Cow", image: "assets/cow.png", isCorrect: true },
+            { text: "Cat", image: "assets/cat.png", isCorrect: false },
+            { text: "Dog", image: "assets/dog.png", isCorrect: false },
+        ],
+        category: "images"
+    },
+    {
+        question: "Which one is an Apple?",
+        image: "assets/apple.png",
+        options: [
+            { text: "Banana", image: "assets/banana.png", isCorrect: false },
+            { text: "Apple", image: "assets/apple.png", isCorrect: true },
+            { text: "Orange", image: "assets/orange.png", isCorrect: false },
+        ],
+        category: "images"
+    },
+    {
+        question: "Find the Triangle!",
+        image: "assets/triangle.png",
+        options: [
+            { text: "Circle", image: "assets/circle.png", isCorrect: false },
+            { text: "Square", image: "assets/square.png", isCorrect: false },
+            { text: "Triangle", image: "assets/triangle.png", isCorrect: true },
+        ],
+        category: "images"
+    },
+    {
+        question: "What is 2 + 3?",
+        image: "assets/math.png",
+        options: [
+            { text: "4", image: "assets/numbers/4.png", isCorrect: false },
+            { text: "5", image: "assets/numbers/5.png", isCorrect: true },
+            { text: "6", image: "assets/numbers/6.png", isCorrect: false },
+        ],
+        category: "maths"
+    }
+];
 
     // UI Elements
     const activityContainers = document.querySelectorAll('.activity-container');
