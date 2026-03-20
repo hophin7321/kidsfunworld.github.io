@@ -452,7 +452,7 @@ body {
 /* ===== PAGE BUTTONS GROUP ===== */
 /* Base styling for all page buttons (separated from nav buttons) */
 .page-button {
-    font-family: '', cursive;
+    font-family: 'Fredoka One', cursive;
     font-size: 18px;
     color: white;
     padding: 0.8em 1.2em;
@@ -491,7 +491,7 @@ body {
 
 /* Legacy class names - mapped to new page-button classes */
 .app-button {
-    font-family: 'Comic-Sans', cursive;
+    font-family: 'Fredoka One', cursive;
     font-size: 18px;
     background: #4CAF50;
     color: white;
@@ -517,7 +517,7 @@ body {
 }
 
 .nextColoring {
-    font-family: '', cursive;
+    font-family: 'Fredoka One', cursive;
     font-size: 18px;
     background: #2196F3;
     color: white;

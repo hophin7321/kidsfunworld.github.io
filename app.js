@@ -600,9 +600,49 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Math Question Generator ---
+    function generateMathQuestion() {
+        const operators = ['+', '-', '*'];
+        const op = operators[Math.floor(Math.random() * operators.length)];
+        let n1 = Math.floor(Math.random() * 10) + 1;
+        let n2 = Math.floor(Math.random() * 10) + 1;
+
+        // Ensure no negative results for kids
+        if (op === '-' && n1 < n2) [n1, n2] = [n2, n1];
+
+        let correctAnswer;
+        if (op === '+') correctAnswer = n1 + n2;
+        if (op === '-') correctAnswer = n1 - n2;
+        if (op === '*') correctAnswer = n1 * n2;
+
+        // Generate two unique wrong answers
+        const wrongAnswers = new Set();
+        while (wrongAnswers.size < 2) {
+            let wrong = correctAnswer + (Math.floor(Math.random() * 5) + 1) * (Math.random() > 0.5 ? 1 : -1);
+            if (wrong !== correctAnswer && wrong >= 0) wrongAnswers.add(wrong);
+        }
+
+        const options = [
+            { text: correctAnswer.toString(), isCorrect: true },
+            ...Array.from(wrongAnswers).map(w => ({ text: w.toString(), isCorrect: false }))
+        ];
+
+        return {
+            question: `What is ${n1} ${op} ${n2}?`,
+            mathText: `${n1} ${op} ${n2}`, // This is for the "box"
+            options: options,
+            category: "maths"
+        };
+    }
+
     function startQuiz() {
-        const filteredQuestions = quizQuestions.filter(q => q.category === appState.quizCategory);
-        appState.quizCurrentQuestion = filteredQuestions[Math.floor(Math.random() * filteredQuestions.length)];
+        if (appState.quizCategory === 'maths') {
+            appState.quizCurrentQuestion = generateMathQuestion();
+        } else {
+            // Your original image-based quiz logic
+            const filtered = quizQuestions.filter(q => q.category === 'images');
+            appState.quizCurrentQuestion = filtered[Math.floor(Math.random() * filtered.length)];
+        }
         appState.quizAnsweredCorrectly = false;
         displayQuizQuestion();
     }
@@ -611,16 +651,54 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!appState.quizCurrentQuestion) return;
 
         quizQuestionText.textContent = appState.quizCurrentQuestion.question;
-        quizQuestionImage.src = appState.quizCurrentQuestion.image;
-        quizOptionsContainer.innerHTML = '';
+        
+        // Find or create the "Math Box" div
+        let mathBox = document.getElementById('mathBoxDisplay');
+        const imageContainer = document.querySelector('.quiz-question-image-container');
 
+        if (appState.quizCategory === 'maths') {
+            quizQuestionImage.style.display = 'none'; // Hide the image
+            
+            if (!mathBox) {
+                mathBox = document.createElement('div');
+                mathBox.id = 'mathBoxDisplay';
+                // Basic styling to make it look good inside the box
+                Object.assign(mathBox.style, {
+                    fontSize: '4.5rem',
+                    // fontWeight: 'bold',
+                    color: '#BA68C8',
+                    textAlign: 'center',
+                    width: '100%',
+                    padding: '15px'
+                });
+                imageContainer.appendChild(mathBox);
+            }
+            mathBox.textContent = appState.quizCurrentQuestion.mathText;
+            mathBox.style.display = 'block';
+        } else {
+            // Normal behavior for image questions
+            quizQuestionImage.style.display = 'block';
+            quizQuestionImage.src = appState.quizCurrentQuestion.image;
+            if (mathBox) mathBox.style.display = 'none';
+        }
+
+        // Handle the Option Buttons
+        quizOptionsContainer.innerHTML = '';
         const shuffledOptions = [...appState.quizCurrentQuestion.options].sort(() => Math.random() - 0.5);
 
         shuffledOptions.forEach(option => {
             const button = document.createElement('button');
             button.classList.add('quiz-option-button');
-            button.innerHTML = `<img src="${option.image}" alt="${option.text}">`;
-            button.addEventListener('click', () => handleQuizAnswer(button, option));
+            
+            if (appState.quizCategory === 'maths') {
+                button.textContent = option.text;
+                button.style.fontSize = '2.5rem'; // Make numbers big
+                button.style.fontWeight = 'bold'
+            } else {
+                button.innerHTML = `<img src="${option.image}" alt="${option.text}">`;
+            }
+            
+            button.onclick = () => handleQuizAnswer(button, option);
             quizOptionsContainer.appendChild(button);
         });
     }
