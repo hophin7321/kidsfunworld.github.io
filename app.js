@@ -1,6 +1,6 @@
 const ASSETS = {
     animals: 'assets/animals/',
-    alphabet: 'assets/alphabet/',
+    alphabet: 'assets/Images/',
     rhymes: 'assets/rhymes/',
     quiz: 'assets/quiz/',
     coloring: 'assets/coloring/'
@@ -106,41 +106,41 @@ document.addEventListener('DOMContentLoaded', () => {
     // Data for activities
     const animalData = [
         { name: "Cow", sound: ASSETS.animals + "Cow.mp3", image: ASSETS.animals + "Cow.png" }, // Placeholder audio
-        { name: "Dog", sound: ASSETS.animals + "Dog.mp3", image: ASSETS.alphabet + "Dog.png" },
+        { name: "Dog", sound: ASSETS.animals + "Dog.mp3", image: ASSETS.Images + "Dog.png" },
         { name: "Cat", sound: ASSETS.animals + "Cat.mp3", image: ASSETS.alphabet + "Cat.png" },
-        { name: "Lion", sound: ASSETS.animals + "Lion.mp3", image: ASSETS.alphabet + "Lion.png" },
-        { name: "Elephant", sound: ASSETS.animals + "Elephant.mp3", image: ASSETS.alphabet + "Elephant.png" },
-        { name: "Horse", sound: ASSETS.animals + "Horse.mp3", image: ASSETS.alphabet + "Horse.png" },
+        { name: "Lion", sound: ASSETS.animals + "Lion.mp3", image: ASSETS.Images + "Lion.png" },
+        { name: "Elephant", sound: ASSETS.animals + "Elephant.mp3", image: ASSETS.Images + "Elephant.png" },
+        { name: "Horse", sound: ASSETS.animals + "Horse.mp3", image: ASSETS.Images + "Horse.png" },
         { name: "Duck", sound: ASSETS.animals + "Duck.mp3", image: ASSETS.animals + "Duck.png" },
     ];
 
     const alphabetData = [
-        { letter: 'A', word: 'Apple', image: ASSETS.alphabet + "Apple.png", sound: ASSETS.alphabet + "A.mp3" },
-        { letter: 'B', word: 'Ball', image: ASSETS.alphabet + "Ball.png", sound: ASSETS.alphabet + "B.mp3" },
-        { letter: 'C', word: 'Cat', image: ASSETS.alphabet + "Cat.png", sound: ASSETS.alphabet + "C.mp3" },
-        { letter: 'D', word: 'Dog', image: ASSETS.alphabet + "Dog.png", sound: ASSETS.alphabet + "D.mp3" },
-        { letter: 'E', word: 'Elephant', image: ASSETS.alphabet + "Elephant.png", sound: ASSETS.alphabet + "E.mp3" },
-        { letter: 'F', word: 'Fish', image: ASSETS.alphabet + "Fish.png", sound: ASSETS.alphabet + "F.mp3" },
-        { letter: 'G', word: 'Goat', image: ASSETS.alphabet + "Goat.png", sound: ASSETS.alphabet + "G.mp3" },
-        { letter: 'H', word: 'Horse', image: ASSETS.alphabet + "Horse.png", sound: ASSETS.alphabet + "H.mp3" },
-        { letter: 'I', word: 'Ice Cream', image: ASSETS.alphabet + "ice cream.png", sound: ASSETS.alphabet + "I.mp3" },
-        { letter: 'J', word: 'Juice', image: ASSETS.alphabet + "Juice.png", sound: ASSETS.alphabet + "J.mp3" },
-        { letter: 'K', word: 'Kite', image: ASSETS.alphabet + "Kite.png", sound: ASSETS.alphabet + "K.mp3" },
-        { letter: 'L', word: 'Lion', image: ASSETS.alphabet + "Lion.png", sound: ASSETS.alphabet + "L.mp3" },
-        { letter: 'M', word: 'Monkey', image: ASSETS.alphabet + "Monkey.png", sound: ASSETS.alphabet + "M.mp3" },
-        { letter: 'N', word: 'Nest', image: ASSETS.alphabet + "Nest.png", sound: ASSETS.alphabet + "N.mp3" },
-        { letter: 'O', word: 'Orange', image: ASSETS.alphabet + "Orange.png", sound: ASSETS.alphabet + "O.mp3" },
-        { letter: 'P', word: 'Parrot', image: ASSETS.alphabet + "Parrot.png", sound: ASSETS.alphabet + "P.mp3" },
-        { letter: 'Q', word: 'Queen', image: ASSETS.alphabet + "Queen.png", sound: ASSETS.alphabet + "Q.mp3" },
-        { letter: 'R', word: 'Rabbit', image: ASSETS.alphabet + "Rabbit.png", sound: ASSETS.alphabet + "R.mp3" },
-        { letter: 'S', word: 'Sun', image: ASSETS.alphabet + "Sun.png", sound: ASSETS.alphabet + "S.mp3" },
-        { letter: 'T', word: 'Train', image: ASSETS.alphabet + "Train.png", sound: ASSETS.alphabet + "T.mp3" },
-        { letter: 'U', word: 'Umbrella', image: ASSETS.alphabet + "Umbrella.png", sound: ASSETS.alphabet + "U.mp3" },
-        { letter: 'V', word: 'Van', image: ASSETS.alphabet + "Van.png", sound: ASSETS.alphabet + "V.mp3" },
-        { letter: 'W', word: 'Whale', image: ASSETS.alphabet + "Whale.png", sound: ASSETS.alphabet + "W.mp3" },
-        { letter: 'X', word: 'Xylophone', image: ASSETS.alphabet + "xylophone.png", sound: ASSETS.alphabet + "X.mp3" },
-        { letter: 'Y', word: 'Yo-Yo', image: ASSETS.alphabet + "yo-yo.png", sound: ASSETS.alphabet + "Y.mp3" },
-        { letter: 'Z', word: 'Zebra', image: ASSETS.alphabet + "Zebra.png", sound: ASSETS.alphabet + "Z.mp3" },
+        { letter: 'A', word: 'Apple', image: ASSETS.Images + "Apple.png", sound: ASSETS.alphabet + "A.mp3" },
+        { letter: 'B', word: 'Ball', image: ASSETS.Images + "Ball.png", sound: ASSETS.alphabet + "B.mp3" },
+        { letter: 'C', word: 'Cat', image: ASSETS.Images + "Cat.png", sound: ASSETS.alphabet + "C.mp3" },
+        { letter: 'D', word: 'Dog', image: ASSETS.Images + "Dog.png", sound: ASSETS.alphabet + "D.mp3" },
+        { letter: 'E', word: 'Elephant', image: ASSETS.Images + "Elephant.png", sound: ASSETS.alphabet + "E.mp3" },
+        { letter: 'F', word: 'Fish', image: ASSETS.Images + "Fish.png", sound: ASSETS.alphabet + "F.mp3" },
+        { letter: 'G', word: 'Goat', image: ASSETS.Images + "Goat.png", sound: ASSETS.alphabet + "G.mp3" },
+        { letter: 'H', word: 'Horse', image: ASSETS.Images + "Horse.png", sound: ASSETS.alphabet + "H.mp3" },
+        { letter: 'I', word: 'Ice Cream', image: ASSETS.Images + "ice cream.png", sound: ASSETS.alphabet + "I.mp3" },
+        { letter: 'J', word: 'Juice', image: ASSETS.Images + "Juice.png", sound: ASSETS.alphabet + "J.mp3" },
+        { letter: 'K', word: 'Kite', image: ASSETS.Images + "Kite.png", sound: ASSETS.alphabet + "K.mp3" },
+        { letter: 'L', word: 'Lion', image: ASSETS.Images + "Lion.png", sound: ASSETS.alphabet + "L.mp3" },
+        { letter: 'M', word: 'Monkey', image: ASSETS.Images + "Monkey.png", sound: ASSETS.alphabet + "M.mp3" },
+        { letter: 'N', word: 'Nest', image: ASSETS.Images + "Nest.png", sound: ASSETS.alphabet + "N.mp3" },
+        { letter: 'O', word: 'Orange', image: ASSETS.Images + "Orange.png", sound: ASSETS.alphabet + "O.mp3" },
+        { letter: 'P', word: 'Parrot', image: ASSETS.Images + "Parrot.png", sound: ASSETS.alphabet + "P.mp3" },
+        { letter: 'Q', word: 'Queen', image: ASSETS.Images + "Queen.png", sound: ASSETS.alphabet + "Q.mp3" },
+        { letter: 'R', word: 'Rabbit', image: ASSETS.Images + "Rabbit.png", sound: ASSETS.alphabet + "R.mp3" },
+        { letter: 'S', word: 'Sun', image: ASSETS.Images + "Sun.png", sound: ASSETS.alphabet + "S.mp3" },
+        { letter: 'T', word: 'Train', image: ASSETS.Images + "Train.png", sound: ASSETS.alphabet + "T.mp3" },
+        { letter: 'U', word: 'Umbrella', image: ASSETS.Images + "Umbrella.png", sound: ASSETS.alphabet + "U.mp3" },
+        { letter: 'V', word: 'Van', image: ASSETS.Images + "Van.png", sound: ASSETS.alphabet + "V.mp3" },
+        { letter: 'W', word: 'Whale', image: ASSETS.Images + "Whale.png", sound: ASSETS.alphabet + "W.mp3" },
+        { letter: 'X', word: 'Xylophone', image: ASSETS.Images + "xylophone.png", sound: ASSETS.alphabet + "X.mp3" },
+        { letter: 'Y', word: 'Yo-Yo', image: ASSETS.Images + "yo-yo.png", sound: ASSETS.alphabet + "Y.mp3" },
+        { letter: 'Z', word: 'Zebra', image: ASSETS.Images + "Zebra.png", sound: ASSETS.alphabet + "Z.mp3" },
     ];
 
 
@@ -160,31 +160,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const quizQuestions = [
     {
         question: "What animal says 'Moo'?",
-        image: "assets/cow.png",
+        image: "assets/Images/Cow.png",
         options: [
-            { text: "Cow", image: "assets/cow.png", isCorrect: true },
-            { text: "Cat", image: "assets/cat.png", isCorrect: false },
-            { text: "Dog", image: "assets/dog.png", isCorrect: false },
+            { text: "Cow", image: "assets/Images/Cow.png", isCorrect: true },
+            { text: "Cat", image: "assets/Images/Cat.png", isCorrect: false },
+            { text: "Dog", image: "assets/Images/Dog.png", isCorrect: false },
         ],
         category: "images"
     },
     {
         question: "Which one is an Apple?",
-        image: "assets/apple.png",
+        image: "assets/Images/Apple.png",
         options: [
-            { text: "Banana", image: "assets/banana.png", isCorrect: false },
-            { text: "Apple", image: "assets/apple.png", isCorrect: true },
-            { text: "Orange", image: "assets/orange.png", isCorrect: false },
+            { text: "Banana", image: "assets/Images/Banana.png", isCorrect: false },
+            { text: "Apple", image: "assets/Images/Apple.png", isCorrect: true },
+            { text: "Orange", image: "assets/Images/Orange.png", isCorrect: false },
         ],
         category: "images"
     },
     {
         question: "Find the Triangle!",
-        image: "assets/triangle.png",
+        image: "assets/Images/Triangle.png",
         options: [
-            { text: "Circle", image: "assets/circle.png", isCorrect: false },
-            { text: "Square", image: "assets/square.png", isCorrect: false },
-            { text: "Triangle", image: "assets/triangle.png", isCorrect: true },
+            { text: "Circle", image: "assets/Images/Circle.png", isCorrect: false },
+            { text: "Square", image: "assets/Images/Square.png", isCorrect: false },
+            { text: "Triangle", image: "assets/Images/Triangle.png", isCorrect: true },
         ],
         category: "images"
     },
